@@ -57,6 +57,7 @@ public class Guns : MonoBehaviour {
 
 	public GameObject[] Bullet;
 	public GameObject bulletSpawner; 
+	public GameObject bulletDirection; 
 
 
 	public float burst_countdown;
@@ -124,6 +125,13 @@ public class Guns : MonoBehaviour {
 
 	
 
+	}
+
+	void Spawn()
+	{
+		Vector3 Direction = bulletDirection.transform.position - transform.position;
+
+		Instantiate (Bullet [0], bulletSpawner.transform.position, Quaternion.LookRotation (transform.forward, Direction));
 	}
 		
 
@@ -196,6 +204,7 @@ public class Guns : MonoBehaviour {
 				shadowAnimator.SetBool ("Shooting", true);
 				burst_timer = true;
 				Shoot ();
+				//Spawn();
 
 			}
 		}
