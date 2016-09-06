@@ -32,6 +32,11 @@ public class BulletScript : MonoBehaviour {
 			Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), obj.gameObject.GetComponent<Collider> ());
 		} else {
 
+			if(obj.gameObject.tag == "zombieCitizen"){
+				Destroy (obj.gameObject);
+			}
+
+
 			Destroy (gameObject);
 		}
 	}

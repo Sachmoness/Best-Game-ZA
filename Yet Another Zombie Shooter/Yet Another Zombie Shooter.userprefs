@@ -1,22 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Guns.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BulletScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\Guns.cs" Line="244" Column="5" />
+      <File FileName="Assets\Scripts\Guns.cs" Line="318" Column="3" />
+      <File FileName="Assets\Scripts\zombieWalk.cs" Line="23" Column="59" />
       <File FileName="Assets\Scripts\playerMoveScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BulletScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\rotateToCrossHair.cs" Line="1" Column="1" />
-      <File FileName="Assets\gameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\pixelCanvas.cs" Line="1" Column="1" />
-      <File FileName="Assets\drawBlood.cs" Line="1" Column="1" />
-      <File FileName="Assets\alphaCheck.cs" Line="1" Column="1" />
-      <File FileName="Assets\gravityScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\roofAlphaScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\roomFogScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\followParentFog.cs" Line="1" Column="1" />
-      <File FileName="Assets\changeMainFog.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\cameraFollowPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\secondLevelAlphaScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BulletScript.cs" Line="35" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

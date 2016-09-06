@@ -68,6 +68,7 @@ public class Guns : MonoBehaviour {
 	Quaternion direc;
 
 	public Text Reloading_Text;
+	public Text BulletCount_Text;
 
 	// Use this for initialization
 	void Start () 
@@ -122,7 +123,18 @@ public class Guns : MonoBehaviour {
 
 		Reload ();
 
-	
+		if(Pistol) // display bullet count
+		{
+			BulletCount_Text.text = "Bullet Count: " + bulletCount + "/" + pistolClip;
+		}
+		else if(Shotgun)
+		{
+			BulletCount_Text.text = "Bullet Count: " + bulletCount + "/" + shotgunClip;
+		}
+		else if(SMG)
+		{
+			BulletCount_Text.text = "Bullet Count: " + bulletCount + "/" + SMGClip;
+		}
 
 	}
 		
@@ -132,8 +144,7 @@ public class Guns : MonoBehaviour {
 
 		if (reloading)
 		{ //reload timer
-
-			Debug.Log ("Reloading: " + reloading);
+			
 
 			Reloading_Text.gameObject.SetActive (true);
 
@@ -184,18 +195,20 @@ public class Guns : MonoBehaviour {
 		
 	}
 
-	void GunShoot()
+	void GunShoot()//shoot animation
 	{
 
 		if(Input.GetMouseButton(0) && bulletCount > 0 )
 		{
 
 
-			if(!burst_timer){
+			if(!burst_timer && !reloading){
 				modelAnimator.SetBool ("Shooting", true);
 				shadowAnimator.SetBool ("Shooting", true);
-				burst_timer = true;
+
 				Shoot ();
+				burst_timer = true;
+
 
 			}
 		}
@@ -217,7 +230,7 @@ public class Guns : MonoBehaviour {
 
 			else 
 			{
-				
+				burst_timer = false;
 
 				if (Pistol) 
 				{
@@ -240,7 +253,7 @@ public class Guns : MonoBehaviour {
 				modelAnimator.SetBool ("Shooting", false);
 				shadowAnimator.SetBool ("Shooting", false);
 
-				burst_timer = false;
+
 
 
 			}
@@ -262,8 +275,8 @@ public class Guns : MonoBehaviour {
 		direc = Quaternion.LookRotation (transform.forward, shootDirection);
 	}
 
-	void Shoot(){
 
+	void Shoot(){
 
 
 		getDirection ();
@@ -315,7 +328,7 @@ public class Guns : MonoBehaviour {
 			
 			bulletCount = pistolClip;
 			reloadTime = pistolReload;
-			burst_countdown =pistolROF;
+			burst_countdown = pistolROF;
 
 			reloading = false;
 			burst_timer = false;
